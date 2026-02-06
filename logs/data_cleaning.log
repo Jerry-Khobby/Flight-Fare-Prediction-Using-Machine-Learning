@@ -1,0 +1,26 @@
+2026-02-06 11:13:28,536 - INFO - Started preprocessing flight dataset
+2026-02-06 11:13:28,545 - INFO - Filled missing categorical values in Airline with 'Unknown'
+2026-02-06 11:13:28,548 - INFO - Filled missing categorical values in Source with 'Unknown'
+2026-02-06 11:13:28,552 - INFO - Filled missing categorical values in Source Name with 'Unknown'
+2026-02-06 11:13:28,557 - INFO - Filled missing categorical values in Destination with 'Unknown'
+2026-02-06 11:13:28,562 - INFO - Filled missing categorical values in Destination Name with 'Unknown'
+2026-02-06 11:13:28,567 - INFO - Filled missing categorical values in Stopovers with 'Unknown'
+2026-02-06 11:13:28,573 - INFO - Filled missing categorical values in Aircraft Type with 'Unknown'
+2026-02-06 11:13:28,577 - INFO - Filled missing categorical values in Class with 'Unknown'
+2026-02-06 11:13:28,582 - INFO - Filled missing categorical values in Booking Source with 'Unknown'
+2026-02-06 11:13:28,586 - INFO - Filled missing categorical values in Seasonality with 'Unknown'
+2026-02-06 11:13:28,590 - INFO - Removed 0 rows with negative values in Base Fare (BDT)
+2026-02-06 11:13:28,592 - INFO - Removed 0 rows with negative values in Tax & Surcharge (BDT)
+2026-02-06 11:13:28,594 - INFO - Removed 0 rows with negative values in Total Fare (BDT)
+2026-02-06 11:13:28,619 - INFO - Normalized city names in Source to uppercase
+2026-02-06 11:13:28,644 - INFO - Normalized city names in Destination to uppercase
+2026-02-06 11:13:28,690 - INFO - Converted Departure Date & Time to datetime
+2026-02-06 11:13:28,735 - INFO - Converted Arrival Date & Time to datetime
+2026-02-06 11:13:28,736 - INFO - Calculated Total Fare as Base Fare + Tax & Surcharge
+2026-02-06 11:13:28,775 - INFO - Extracted departure and arrival month, day, and weekday features
+2026-02-06 11:13:30,023 - INFO - Saved cleaned dataset to data\cleaned_flight_data.csv for KPI stage
+2026-02-06 11:13:30,099 - INFO - Encoded Stopovers, Class, and Booking Source
+2026-02-06 11:13:30,155 - INFO - One-hot encoded nominal columns: Airline, Source, Destination, Aircraft Type, Season
+2026-02-06 11:13:30,174 - INFO - Scaled numerical features with StandardScaler
+2026-02-06 11:13:30,215 - INFO - Performed train-test split with test_size=0.2
+2026-02-06 11:13:30,216 - INFO - Preprocessing complete
