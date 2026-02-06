@@ -24,3 +24,211 @@
 2026-02-06 11:13:30,174 - INFO - Scaled numerical features with StandardScaler
 2026-02-06 11:13:30,215 - INFO - Performed train-test split with test_size=0.2
 2026-02-06 11:13:30,216 - INFO - Preprocessing complete
+2026-02-06 12:00:03,712 - INFO - Started EDA and KPI exploration
+2026-02-06 12:00:04,196 - INFO - 
+Airline Fare Summary (top 5):
+                            count          mean           std          min          25%           50%            75%            max
+Airline                                                                                                                            
+Air Arabia                 2217.0  69094.361068  79646.441145  1805.984292  9717.048886  41612.096993   96910.659796  446442.765662
+Air Astra                  2304.0  67838.704593  77236.982762  1872.587627  9592.870625  40041.160921  100327.282568  409699.741173
+Air India                  2280.0  71774.463192  82928.667517  1816.371029  9582.646550  42143.341589  102346.671694  404646.529713
+AirAsia                    2312.0  73830.162976  84922.533440  1804.132096  9367.222220  42763.823207  110478.110065  415248.029434
+Biman Bangladesh Airlines  2344.0  69501.049697  80192.883771  1854.057950  9301.250959  40054.473805  100591.033321  457335.412056
+2026-02-06 12:00:04,222 - INFO - 
+Source Fare Summary (top 5):
+         count          mean           std          min          25%           50%            75%            max
+Source                                                                                                          
+BZL     7102.0  71886.069914  81832.493265  1824.634260  9834.331544  43429.515532  105108.037819  482855.598026
+CGP     7241.0  70176.037779  81049.289844  1809.274256  9503.776329  40043.268655  103049.699732  457335.412056
+CXB     7049.0  70389.286365  80643.315230  1804.132096  9358.221711  40895.035391  103820.980108  479213.617169
+DAC     7146.0  69618.980877  79926.249585  1805.890639  9477.073486  40544.788860  102717.847831  466709.754241
+JSR     7149.0  68834.235918  79139.447653  1808.644603  9424.896510  40497.700349  100116.400753  435069.262200
+2026-02-06 12:00:04,231 - INFO - 
+Destination Fare Summary (top 5):
+              count           mean           std           min           25%           50%            75%            max
+Destination                                                                                                             
+BKK          3036.0  107217.912634  80192.726812  10767.177157  47706.801708  79025.738183  146110.709337  405746.388116
+BZL          2641.0    7589.211860   3803.951814   1805.890639   4121.014098   7236.090716   10687.777779   20226.140125
+CCU          2938.0  103703.818817  81505.734323   6612.819060  42639.626770  75651.557049  142752.644049  447814.559022
+CGP          2613.0    7541.871054   3790.995606   1812.391403   4178.020500   7128.209896   10539.102994   22476.001159
+CXB          2652.0    7417.316265   3777.358107   1805.984292   4040.615901   6932.461556   10379.105639   20414.584234
+2026-02-06 12:00:04,268 - INFO - 
+Season Fare Summary (all):
+                   count          mean            std          min           25%           50%            75%            max
+Season                                                                                                                      
+Eid                603.0  90790.866343   99742.978431  2291.602504  13583.918458  56264.616445  126956.191860  453434.454180
+Hajj               942.0  96189.948444  111160.553863  2682.581330  12931.228994  54250.273737  149488.516706  522606.373836
+Regular          44525.0  67337.333588   76916.186996  1800.975688   9197.038297  39647.436709   98852.369218  350983.440389
+Winter Holidays  10930.0  79256.332750   89923.880222  2120.464064  10823.596960  47107.570473  116700.392888  416669.726052
+2026-02-06 12:00:04,287 - INFO - 
+Correlation matrix:
+                       Duration (hrs)  Base Fare  Tax & Surcharge  Total Fare  Days Before Departure
+Duration (hrs)               1.000000   0.333584         0.451704    0.352261               0.001137
+Base Fare                    0.333584   1.000000         0.977987    0.999509              -0.067484
+Tax & Surcharge              0.451704   0.977987         1.000000    0.984045              -0.055237
+Total Fare                   0.352261   0.999509         0.984045    1.000000              -0.065835
+Days Before Departure        0.001137  -0.067484        -0.055237   -0.065835               1.000000
+2026-02-06 12:00:06,498 - INFO - Saved correlation heatmap to data/kpi-diagrams\correlation_heatmap.png
+2026-02-06 12:00:07,983 - INFO - Saved total fare distribution to data/kpi-diagrams\total_fare_distribution.png
+2026-02-06 12:00:08,729 - INFO - Saved boxplot of fare by airline to data/kpi-diagrams\fare_by_airline.png
+2026-02-06 12:00:09,073 - INFO - Saved average fare by month plot to data/kpi-diagrams\avg_fare_by_month.png
+2026-02-06 12:00:09,150 - INFO - 
+Average fare per Airline:
+Airline
+Turkish Airlines             74738.634474
+AirAsia                      73830.162976
+Cathay Pacific               72594.044978
+Malaysian Airlines           72247.165833
+Thai Airways                 72062.788892
+IndiGo                       71904.319816
+Air India                    71774.463192
+US-Bangla Airlines           71421.249215
+Kuwait Airways               71274.820497
+Etihad Airways               71062.533751
+Gulf Air                     70814.669765
+SriLankan Airlines           70706.944806
+British Airways              69892.944809
+Biman Bangladesh Airlines    69501.049697
+Emirates                     69363.935076
+Qatar Airways                69285.314723
+Air Arabia                   69094.361068
+Lufthansa                    68608.154969
+Saudia                       68461.151845
+FlyDubai                     68310.266810
+Air Astra                    67838.704593
+NovoAir                      67833.990830
+Singapore Airlines           67556.072055
+Vistara                      67497.634221
+2026-02-06 12:00:09,151 - INFO - 
+Top 10 most popular routes:
+Route
+RJH -> SIN    417
+DAC -> DXB    413
+BZL -> YYZ    410
+CXB -> DEL    408
+CGP -> BKK    408
+BZL -> JED    407
+RJH -> JFK    404
+SPD -> DEL    404
+CGP -> CXB    404
+CGP -> RJH    403
+2026-02-06 12:00:09,153 - INFO - 
+Average fare per Season:
+Season
+Hajj               96189.948444
+Eid                90790.866343
+Winter Holidays    79256.332750
+Regular            67337.333588
+2026-02-06 12:00:09,154 - INFO - 
+Top 5 most expensive routes:
+Route
+SPD -> BKK    117348.650799
+CXB -> YYZ    116616.846376
+CXB -> LHR    116038.510824
+BZL -> JFK    115428.345735
+CXB -> JFK    115370.168147
+2026-02-06 12:00:09,155 - INFO - EDA and KPI exploration complete
+2026-02-06 12:02:54,217 - INFO - Started EDA and KPI exploration
+2026-02-06 12:02:54,476 - INFO - 
+Airline Fare Summary (top 5):
+                            count          mean           std          min          25%           50%            75%            max
+Airline                                                                                                                            
+Air Arabia                 2217.0  69094.361068  79646.441145  1805.984292  9717.048886  41612.096993   96910.659796  446442.765662
+Air Astra                  2304.0  67838.704593  77236.982762  1872.587627  9592.870625  40041.160921  100327.282568  409699.741173
+Air India                  2280.0  71774.463192  82928.667517  1816.371029  9582.646550  42143.341589  102346.671694  404646.529713
+AirAsia                    2312.0  73830.162976  84922.533440  1804.132096  9367.222220  42763.823207  110478.110065  415248.029434
+Biman Bangladesh Airlines  2344.0  69501.049697  80192.883771  1854.057950  9301.250959  40054.473805  100591.033321  457335.412056
+2026-02-06 12:02:54,521 - INFO - 
+Source Fare Summary (top 5):
+         count          mean           std          min          25%           50%            75%            max
+Source                                                                                                          
+BZL     7102.0  71886.069914  81832.493265  1824.634260  9834.331544  43429.515532  105108.037819  482855.598026
+CGP     7241.0  70176.037779  81049.289844  1809.274256  9503.776329  40043.268655  103049.699732  457335.412056
+CXB     7049.0  70389.286365  80643.315230  1804.132096  9358.221711  40895.035391  103820.980108  479213.617169
+DAC     7146.0  69618.980877  79926.249585  1805.890639  9477.073486  40544.788860  102717.847831  466709.754241
+JSR     7149.0  68834.235918  79139.447653  1808.644603  9424.896510  40497.700349  100116.400753  435069.262200
+2026-02-06 12:02:54,550 - INFO - 
+Destination Fare Summary (top 5):
+              count           mean           std           min           25%           50%            75%            max
+Destination                                                                                                             
+BKK          3036.0  107217.912634  80192.726812  10767.177157  47706.801708  79025.738183  146110.709337  405746.388116
+BZL          2641.0    7589.211860   3803.951814   1805.890639   4121.014098   7236.090716   10687.777779   20226.140125
+CCU          2938.0  103703.818817  81505.734323   6612.819060  42639.626770  75651.557049  142752.644049  447814.559022
+CGP          2613.0    7541.871054   3790.995606   1812.391403   4178.020500   7128.209896   10539.102994   22476.001159
+CXB          2652.0    7417.316265   3777.358107   1805.984292   4040.615901   6932.461556   10379.105639   20414.584234
+2026-02-06 12:02:54,565 - INFO - 
+Season Fare Summary (all):
+                   count          mean            std          min           25%           50%            75%            max
+Season                                                                                                                      
+Eid                603.0  90790.866343   99742.978431  2291.602504  13583.918458  56264.616445  126956.191860  453434.454180
+Hajj               942.0  96189.948444  111160.553863  2682.581330  12931.228994  54250.273737  149488.516706  522606.373836
+Regular          44525.0  67337.333588   76916.186996  1800.975688   9197.038297  39647.436709   98852.369218  350983.440389
+Winter Holidays  10930.0  79256.332750   89923.880222  2120.464064  10823.596960  47107.570473  116700.392888  416669.726052
+2026-02-06 12:02:54,597 - INFO - 
+Correlation matrix:
+                       Duration (hrs)  Base Fare  Tax & Surcharge  Total Fare  Days Before Departure
+Duration (hrs)               1.000000   0.333584         0.451704    0.352261               0.001137
+Base Fare                    0.333584   1.000000         0.977987    0.999509              -0.067484
+Tax & Surcharge              0.451704   0.977987         1.000000    0.984045              -0.055237
+Total Fare                   0.352261   0.999509         0.984045    1.000000              -0.065835
+Days Before Departure        0.001137  -0.067484        -0.055237   -0.065835               1.000000
+2026-02-06 12:02:55,454 - INFO - Saved correlation heatmap to data/kpi-diagrams\correlation_heatmap.png
+2026-02-06 12:02:57,189 - INFO - Saved total fare distribution to data/kpi-diagrams\total_fare_distribution.png
+2026-02-06 12:02:58,155 - INFO - Saved boxplot of fare by airline to data/kpi-diagrams\fare_by_airline.png
+2026-02-06 12:02:58,588 - INFO - Saved average fare by month plot to data/kpi-diagrams\avg_fare_by_month.png
+2026-02-06 12:02:58,682 - INFO - 
+Average fare per Airline:
+Airline
+Turkish Airlines             74738.634474
+AirAsia                      73830.162976
+Cathay Pacific               72594.044978
+Malaysian Airlines           72247.165833
+Thai Airways                 72062.788892
+IndiGo                       71904.319816
+Air India                    71774.463192
+US-Bangla Airlines           71421.249215
+Kuwait Airways               71274.820497
+Etihad Airways               71062.533751
+Gulf Air                     70814.669765
+SriLankan Airlines           70706.944806
+British Airways              69892.944809
+Biman Bangladesh Airlines    69501.049697
+Emirates                     69363.935076
+Qatar Airways                69285.314723
+Air Arabia                   69094.361068
+Lufthansa                    68608.154969
+Saudia                       68461.151845
+FlyDubai                     68310.266810
+Air Astra                    67838.704593
+NovoAir                      67833.990830
+Singapore Airlines           67556.072055
+Vistara                      67497.634221
+2026-02-06 12:02:58,684 - INFO - 
+Top 10 most popular routes:
+Route
+RJH -> SIN    417
+DAC -> DXB    413
+BZL -> YYZ    410
+CXB -> DEL    408
+CGP -> BKK    408
+BZL -> JED    407
+RJH -> JFK    404
+SPD -> DEL    404
+CGP -> CXB    404
+CGP -> RJH    403
+2026-02-06 12:02:58,685 - INFO - 
+Average fare per Season:
+Season
+Hajj               96189.948444
+Eid                90790.866343
+Winter Holidays    79256.332750
+Regular            67337.333588
+2026-02-06 12:02:58,686 - INFO - 
+Top 5 most expensive routes:
+Route
+SPD -> BKK    117348.650799
+CXB -> YYZ    116616.846376
+CXB -> LHR    116038.510824
+BZL -> JFK    115428.345735
+CXB -> JFK    115370.168147
+2026-02-06 12:02:58,687 - INFO - EDA and KPI exploration complete
