@@ -1,6 +1,6 @@
 from data_cleaning import preprocess_flight_data
 import pandas as pd 
-from data_exploration import perform_eda_kpis
+from data_kpis import perform_eda_kpis
 
 
 

@@ -79,6 +79,16 @@ def preprocess_flight_data(df, target="Total Fare", test_size=0.2, random_state=
     df['Arrival Day'] = df['Arrival Date & Time'].dt.day
     df['Arrival Weekday'] = df['Arrival Date & Time'].dt.weekday
     logger.info("Extracted departure and arrival month, day, and weekday features")
+    
+    
+    
+    #after extracting the figures in the month,day , week , we would have to drop the 
+    logger.info("Extracted departure and arival month,day, and weekday features")
+    df.drop(columns=['Departure Date & Time', 'Arrival Date & Time'], 
+        inplace=True, errors='ignore')
+    
+    
+    logger.info("Dropped original datetime columns")
 
     # Rename columns
     df.rename(columns={
@@ -97,7 +107,7 @@ def preprocess_flight_data(df, target="Total Fare", test_size=0.2, random_state=
 
     # Encode categorical variables
     df.drop(columns=['Source Name', 'Destination Name'], inplace=True, errors='ignore')
-    df["Stopovers"] = df["Stopovers"].replace({"Direct": 0, "1 Stopover": 1, "2 Stops": 2})
+    df["Stopovers"] = df["Stopovers"].replace({"Direct": 0, "1 Stop": 1, "2 Stops": 2}).fillna(0)
     df["Class"] = df["Class"].replace({"Economy": 0, "First Class": 1, "Business": 2})
     df["Booking Source"] = df["Booking Source"].replace({"Online Website": 0, "Travel Agency": 1, "Direct Booking": 2})
     logger.info("Encoded Stopovers, Class, and Booking Source")
