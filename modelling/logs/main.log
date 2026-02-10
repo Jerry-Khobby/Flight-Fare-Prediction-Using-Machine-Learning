@@ -1,0 +1,22 @@
+2026-02-10 14:41:08,717 - INFO - Pipeline started
+2026-02-10 14:41:09,096 - INFO - Started preprocessing
+2026-02-10 14:43:00,143 - INFO - Pipeline started
+2026-02-10 14:43:00,575 - INFO - Started preprocessing
+2026-02-10 14:43:03,543 - INFO - Preprocessing complete
+2026-02-10 14:43:03,545 - INFO - Model training started
+2026-02-10 14:43:03,857 - INFO - Linear Regression: R²=0.6546, MAE=28515.94, RMSE=47985.02
+2026-02-10 14:43:03,930 - INFO - Ridge: R²=0.6545, MAE=28518.07, RMSE=47990.60
+2026-02-10 14:43:04,112 - INFO - Lasso: R²=-0.2260, MAE=58442.86, RMSE=90403.95
+2026-02-10 14:43:05,429 - INFO - Decision Tree: R²=0.3431, MAE=37621.22, RMSE=66175.03
+2026-02-10 14:43:28,985 - INFO - Random Forest: R²=0.6354, MAE=28991.94, RMSE=49302.97
+2026-02-10 14:43:44,556 - INFO - Gradient Boosting: R²=0.6563, MAE=28464.97, RMSE=47865.10
+2026-02-10 14:43:44,559 - INFO - Model comparison saved
+2026-02-10 14:43:44,559 - INFO - Best model: Gradient Boosting
+2026-02-10 14:52:27,397 - INFO - Best GB params: {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100}
+2026-02-10 14:52:27,397 - INFO - Best CV R²: 0.8937
+2026-02-10 14:52:27,696 - INFO - Train R²: 0.6628
+2026-02-10 14:52:27,697 - INFO - Test R²: 0.6563
+2026-02-10 14:52:31,568 - INFO - Regularization plot saved: outputs/plots/regularization_effect.png
+2026-02-10 14:52:31,569 - INFO - Model training completed successfully
+2026-02-10 14:52:31,577 - INFO - Model and scaler saved successfully
+2026-02-10 14:52:31,577 - INFO - Pipeline completed successfully
