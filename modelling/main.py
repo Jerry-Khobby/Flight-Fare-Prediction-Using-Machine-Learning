@@ -20,9 +20,9 @@ def main():
 
     os.makedirs("outputs/models", exist_ok=True)
 
-    joblib.dump(best_model, "flight_price_model.pkl")
-    joblib.dump(scaler, "scaler.pkl")
-    joblib.dump(X_train.columns.tolist(), "feature_columns.pkl")
+    joblib.dump(best_model, "./outputs/models/flight_price_model.pkl")
+    joblib.dump(scaler, "./outputs/models/scaler.pkl")
+    joblib.dump(X_train.columns.tolist(), "./outputs/models/feature_columns.pkl")
 
     logger.info("Model and scaler saved successfully")
     logger.info("Pipeline completed successfully")

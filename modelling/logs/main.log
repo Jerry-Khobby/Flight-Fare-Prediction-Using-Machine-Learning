@@ -20,3 +20,39 @@
 2026-02-10 14:52:31,569 - INFO - Model training completed successfully
 2026-02-10 14:52:31,577 - INFO - Model and scaler saved successfully
 2026-02-10 14:52:31,577 - INFO - Pipeline completed successfully
+2026-02-11 07:38:42,761 - INFO - Pipeline started
+2026-02-11 07:38:43,219 - INFO - Started preprocessing
+2026-02-11 07:38:46,977 - INFO - Preprocessing complete
+2026-02-11 07:38:46,980 - INFO - Model training started
+2026-02-11 07:38:47,241 - INFO - Linear Regression: R²=0.6546, MAE=28515.94, RMSE=47985.02
+2026-02-11 07:38:47,297 - INFO - Ridge: R²=0.6546, MAE=28516.12, RMSE=47985.54
+2026-02-11 07:38:47,344 - INFO - Lasso: R²=-0.1884, MAE=56294.60, RMSE=89005.95
+2026-02-11 07:38:48,886 - INFO - Decision Tree: R²=0.3295, MAE=37877.74, RMSE=66854.90
+2026-02-11 07:39:12,949 - INFO - Random Forest: R²=0.6368, MAE=28963.42, RMSE=49205.86
+2026-02-11 07:39:29,985 - INFO - Gradient Boosting: R²=0.6561, MAE=28464.65, RMSE=47880.56
+2026-02-11 07:39:29,988 - INFO - Model comparison saved
+2026-02-11 07:39:29,989 - INFO - Best model: Gradient Boosting
+2026-02-11 07:49:19,961 - INFO - Best GB params: {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100}
+2026-02-11 07:49:19,961 - INFO - Best CV R²: 0.8937
+2026-02-11 07:49:20,225 - INFO - Train R²: 0.6628
+2026-02-11 07:49:20,226 - INFO - Test R²: 0.6561
+2026-02-11 08:00:53,974 - INFO - Pipeline started
+2026-02-11 08:00:54,336 - INFO - Started preprocessing
+2026-02-11 08:00:57,059 - INFO - Preprocessing complete
+2026-02-11 08:00:57,062 - INFO - Model training started
+2026-02-11 08:00:57,305 - INFO - Linear Regression: R²=0.6546, MAE=28515.94, RMSE=47985.02
+2026-02-11 08:00:57,365 - INFO - Ridge: R²=0.6546, MAE=28516.12, RMSE=47985.54
+2026-02-11 08:00:57,415 - INFO - Lasso: R²=-0.1884, MAE=56294.60, RMSE=89005.95
+2026-02-11 08:00:58,848 - INFO - Decision Tree: R²=0.3295, MAE=37877.74, RMSE=66854.90
+2026-02-11 08:01:15,164 - INFO - Random Forest: R²=0.6368, MAE=28963.42, RMSE=49205.86
+2026-02-11 08:01:31,246 - INFO - Gradient Boosting: R²=0.6561, MAE=28464.65, RMSE=47880.56
+2026-02-11 08:01:31,248 - INFO - Model comparison saved
+2026-02-11 08:01:31,249 - INFO - Best model: Gradient Boosting
+2026-02-11 08:08:59,784 - INFO - Best GB params: {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100}
+2026-02-11 08:08:59,785 - INFO - Best CV R²: 0.8937
+2026-02-11 08:09:00,097 - INFO - Train R²: 0.6628
+2026-02-11 08:09:00,099 - INFO - Test R²: 0.6561
+2026-02-11 08:09:04,731 - INFO - Regularization plot saved: outputs/plots/regularization_effect.png
+2026-02-11 08:09:04,731 - INFO - Model training completed successfully
+2026-02-11 08:09:04,746 - INFO - Model and scaler saved successfully
+2026-02-11 08:09:04,746 - INFO - Pipeline completed successfully

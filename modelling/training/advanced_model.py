@@ -112,7 +112,7 @@ def train_model(X_train, y_train, X_test, y_test):
     plt.legend()
     plt.grid(True)
 
-    plot_path = "data/plots/regularization_effect.png"
+    plot_path = "outputs/plots/regularization_effect.png"
     plt.savefig(plot_path, dpi=300, bbox_inches='tight')
     plt.close()
 
