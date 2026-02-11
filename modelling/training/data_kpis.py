@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from logging_config import get_logger
+from training.logging_config import get_logger
 
 logger = get_logger(log_file="logs/kpi_exploration.log")
 
