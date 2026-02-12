@@ -164,3 +164,174 @@ BZL -> JFK    115968.436285
 2026-02-11 11:50:37,318 - INFO -   - Outputs: outputs/models/
 2026-02-11 11:50:37,318 - INFO -   - Logs: logs/
 2026-02-11 11:50:37,318 - INFO - ============================================================
+2026-02-12 07:55:16,817 - INFO - ============================================================
+2026-02-12 07:55:16,818 - INFO - PIPELINE STARTED
+2026-02-12 07:55:16,818 - INFO - ============================================================
+2026-02-12 07:55:16,818 - INFO - STEP 1: Loading raw data
+2026-02-12 07:55:17,111 - INFO - Loaded 57000 rows, 17 columns
+2026-02-12 07:55:17,111 - INFO - STEP 2: Validating and cleaning data (logs/data_cleaning.log)
+2026-02-12 07:55:17,116 - INFO - ==================================================
+2026-02-12 07:55:17,116 - INFO - VALIDATION STARTED
+2026-02-12 07:55:17,116 - INFO - ==================================================
+2026-02-12 07:55:17,117 - INFO - All 17 required columns present
+2026-02-12 07:55:17,118 - INFO - Columns renamed
+2026-02-12 07:55:17,265 - INFO - Departure date features extracted
+2026-02-12 07:55:17,278 - INFO - Arrival date features extracted
+2026-02-12 07:55:18,052 - INFO - Saved: data/cleaned_flight_data.csv
+2026-02-12 07:55:18,052 - INFO - Validation complete: 57000 rows, 21 columns
+2026-02-12 07:55:18,052 - INFO - ==================================================
+2026-02-12 07:55:18,052 - INFO - Validation complete: 57000 rows after cleaning
+2026-02-12 07:55:18,052 - INFO - STEP 3: Performing EDA and KPIs (logs/kpi_exploration.log)
+2026-02-12 07:55:18,064 - INFO - Started EDA and KPI exploration
+2026-02-12 07:55:18,167 - INFO - 
+Airline Fare Summary (top 5):
+                            count          mean           std          min          25%           50%            75%            max
+Airline                                                                                                                            
+Air Arabia                 2217.0  69924.006965  80842.736398  1805.984292  9726.154688  42120.798344   97461.655539  446442.765662
+Air Astra                  2304.0  68497.407804  78243.987219  1872.587627  9665.533089  40507.210978  100851.209437  459992.376126
+Air India                  2280.0  72474.178419  83772.264938  1816.371029  9656.929032  42429.622428  103057.767805  404646.529713
+AirAsia                    2312.0  74534.390651  85962.633751  1804.132096  9438.713817  42763.823207  111325.258519  415248.029434
+Biman Bangladesh Airlines  2344.0  70192.969287  81289.830154  1854.057950  9373.750115  40733.364320  101751.779949  489089.920796
+2026-02-12 07:55:18,170 - INFO - 
+Source Fare Summary (top 5):
+         count          mean           std          min          25%           50%            75%            max
+Source                                                                                                          
+BZL     7102.0  72679.107126  83073.378439  1824.634260  9917.901648  43584.805691  105611.897647  489089.920796
+CGP     7241.0  70877.632428  82236.605348  1809.274256  9566.196905  40416.259523  103504.126239  524278.760370
+CXB     7049.0  71012.870669  81382.150548  1804.132096  9422.314109  41133.573253  104190.512435  479213.617169
+DAC     7146.0  70349.705188  81107.223691  1805.890639  9505.376258  40935.910531  103579.932599  466709.754241
+JSR     7149.0  69545.898548  80296.039344  1808.644603  9519.301965  40819.996718  101228.745057  473812.803729
+2026-02-12 07:55:18,173 - INFO - 
+Destination Fare Summary (top 5):
+              count           mean           std           min           25%           50%            75%            max
+Destination                                                                                                             
+BKK          3036.0  107971.298644  80852.070516  10767.177157  48021.978508  79582.964715  147050.023716  405746.388116
+BZL          2641.0    7654.837753   3855.614528   1805.890639   4160.250069   7277.119405   10751.775142   21039.435684
+CCU          2938.0  104605.991612  82609.786818   6612.819060  43141.001620  75946.127071  143090.593302  447814.559022
+CGP          2613.0    7610.478020   3853.127735   1812.391403   4209.359848   7208.291216   10633.314630   26971.201391
+CXB          2652.0    7496.466066   3854.010032   1805.984292   4063.032626   7007.594410   10484.668546   24497.501081
+2026-02-12 07:55:18,175 - INFO - 
+Season Fare Summary (all):
+                   count          mean            std          min           25%           50%            75%            max
+Season                                                                                                                      
+Eid                603.0  91560.023236  101038.757718  2291.602504  13630.670192  56621.233630  127769.053998  524278.760370
+Hajj               942.0  97144.471058  113236.760664  2682.581330  12931.228994  54250.273737  149780.238626  558987.332444
+Regular          44525.0  68077.271029   78006.546160  1800.975688   9269.529935  39898.217741   99577.370290  420558.926770
+Winter Holidays  10930.0  79676.737877   90677.969425  2120.464064  10849.753907  47272.617351  117074.607736  493383.967310
+2026-02-12 07:55:18,186 - INFO - 
+Correlation matrix:
+                       Duration (hrs)  Base Fare  Tax & Surcharge  Total Fare  Days Before Departure
+Duration (hrs)               1.000000   0.333584         0.451704    0.350964               0.001137
+Base Fare                    0.333584   1.000000         0.977987    0.997842              -0.067484
+Tax & Surcharge              0.451704   0.977987         1.000000    0.982172              -0.055237
+Total Fare                   0.350964   0.997842         0.982172    1.000000              -0.078789
+Days Before Departure        0.001137  -0.067484        -0.055237   -0.078789               1.000000
+2026-02-12 07:55:19,853 - INFO - Saved correlation heatmap to data/kpi-diagrams\correlation_heatmap.png
+2026-02-12 07:55:20,651 - INFO - Saved total fare distribution to data/kpi-diagrams\total_fare_distribution.png
+2026-02-12 07:55:21,175 - INFO - Saved boxplot of fare by airline to data/kpi-diagrams\fare_by_airline.png
+2026-02-12 07:55:21,435 - INFO - Saved average fare by month plot to data/kpi-diagrams\avg_fare_by_month.png
+2026-02-12 07:55:21,481 - INFO - 
+Average fare per Airline:
+Airline
+Turkish Airlines             75547.268629
+AirAsia                      74534.390651
+Cathay Pacific               73325.091124
+Thai Airways                 72845.789993
+Malaysian Airlines           72775.180201
+IndiGo                       72504.433122
+Air India                    72474.178419
+US-Bangla Airlines           72088.289025
+Kuwait Airways               71988.276107
+Etihad Airways               71785.242045
+Gulf Air                     71458.163828
+SriLankan Airlines           71265.261154
+British Airways              70555.536205
+Biman Bangladesh Airlines    70192.969287
+Emirates                     70106.149413
+Air Arabia                   69924.006965
+Qatar Airways                69865.536487
+Lufthansa                    69293.163879
+Saudia                       69270.676123
+FlyDubai                     68987.689206
+Air Astra                    68497.407804
+NovoAir                      68350.859248
+Singapore Airlines           68323.930914
+Vistara                      68108.238844
+2026-02-12 07:55:21,482 - INFO - 
+Top 10 most popular routes:
+Route
+RJH -> SIN    417
+DAC -> DXB    413
+BZL -> YYZ    410
+CXB -> DEL    408
+CGP -> BKK    408
+BZL -> JED    407
+CGP -> CXB    404
+SPD -> DEL    404
+RJH -> JFK    404
+CGP -> RJH    403
+2026-02-12 07:55:21,482 - INFO - 
+Average fare per Season:
+Season
+Hajj               97144.471058
+Eid                91560.023236
+Winter Holidays    79676.737877
+Regular            68077.271029
+2026-02-12 07:55:21,483 - INFO - 
+Top 5 most expensive routes:
+Route
+SPD -> BKK    117951.572347
+CXB -> YYZ    117848.709744
+CXB -> LHR    116667.654377
+CXB -> JFK    116476.311601
+BZL -> JFK    115968.436285
+2026-02-12 07:55:21,483 - INFO - EDA and KPI exploration complete
+2026-02-12 07:55:21,486 - INFO - EDA complete: plots saved to data/kpi-diagrams/
+2026-02-12 07:55:21,486 - INFO - STEP 4: Preprocessing for training (logs/data_cleaning.log)
+2026-02-12 07:55:21,497 - INFO - ==================================================
+2026-02-12 07:55:21,498 - INFO - PREPROCESSING STARTED
+2026-02-12 07:55:21,498 - INFO - ==================================================
+2026-02-12 07:55:21,513 - INFO - Ordinal encoding complete
+2026-02-12 07:55:21,556 - INFO - One-hot encoding: 5 columns expanded
+2026-02-12 07:55:21,688 - INFO - Removed Base Fare & Tax & Surcharge (target leakage)
+2026-02-12 07:55:21,711 - INFO - Split: 45600 train, 11400 test
+2026-02-12 07:55:21,904 - INFO - Scaling complete: 74 features
+2026-02-12 07:55:21,904 - INFO - ==================================================
+2026-02-12 07:55:21,908 - INFO - Train set: (45600, 74), Test set: (11400, 74)
+2026-02-12 07:55:21,908 - INFO - Features: 74
+2026-02-12 07:55:21,908 - INFO - STEP 5: Training models (logs/model_training.log)
+2026-02-12 07:55:21,908 - INFO - Model training started
+2026-02-12 07:55:22,122 - INFO - Linear Regression: R²=0.6546, MAE=28515.94, RMSE=47985.02
+2026-02-12 07:55:22,166 - INFO - Ridge: R²=0.6546, MAE=28516.12, RMSE=47985.54
+2026-02-12 07:55:22,202 - INFO - Lasso: R²=-0.1884, MAE=56294.60, RMSE=89005.95
+2026-02-12 07:55:23,370 - INFO - Decision Tree: R²=0.3295, MAE=37877.74, RMSE=66854.90
+2026-02-12 07:55:37,895 - INFO - Random Forest: R²=0.6368, MAE=28963.42, RMSE=49205.86
+2026-02-12 07:55:49,991 - INFO - Gradient Boosting: R²=0.6561, MAE=28464.65, RMSE=47880.56
+2026-02-12 07:55:49,994 - INFO - Model comparison saved
+2026-02-12 07:55:49,994 - INFO - Best model: Gradient Boosting
+2026-02-12 08:02:19,861 - INFO - Best GB params: {'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100}
+2026-02-12 08:02:19,861 - INFO - Best CV R²: 0.8937
+2026-02-12 08:02:20,071 - INFO - Train R²: 0.6628
+2026-02-12 08:02:20,072 - INFO - Test R²: 0.6561
+2026-02-12 08:02:20,072 - INFO - Test MAE: 28464.65
+2026-02-12 08:02:20,073 - INFO - Test RMSE: 47880.56
+2026-02-12 08:02:20,073 - INFO - Computing SHAP values
+2026-02-12 08:02:21,006 - INFO - SHAP importance saved
+2026-02-12 08:02:22,082 - INFO - SHAP plot saved: outputs/plots/shap_feature_importance.png
+2026-02-12 08:02:23,836 - INFO - Regularization plot saved: outputs/plots/regularization_effect.png
+2026-02-12 08:02:23,836 - INFO - Model training completed successfully
+2026-02-12 08:02:23,836 - INFO - Model training complete
+2026-02-12 08:02:23,836 - INFO - STEP 6: Saving model artifacts
+2026-02-12 08:02:23,842 - INFO - Model saved: outputs/models/flight_price_model.pkl
+2026-02-12 08:02:23,843 - INFO - Scaler saved: outputs/models/scaler.pkl
+2026-02-12 08:02:23,843 - INFO - Features saved: outputs/models/feature_columns.pkl
+2026-02-12 08:02:23,843 - INFO - ============================================================
+2026-02-12 08:02:23,843 - INFO - PIPELINE COMPLETED SUCCESSFULLY
+2026-02-12 08:02:23,843 - INFO - ============================================================
+2026-02-12 08:02:23,843 - INFO - Summary:
+2026-02-12 08:02:23,843 - INFO -   - Data rows: 57000
+2026-02-12 08:02:23,843 - INFO -   - Features: 74
+2026-02-12 08:02:23,843 - INFO -   - Model type: GradientBoostingRegressor
+2026-02-12 08:02:23,843 - INFO -   - Outputs: outputs/models/
+2026-02-12 08:02:23,843 - INFO -   - Logs: logs/
+2026-02-12 08:02:23,843 - INFO - ============================================================

@@ -1,0 +1,75 @@
+Feature,SHAP Importance
+Duration (hrs),0.6374322104720198
+Aircraft Type_Airbus A320,0.4666243996357573
+Class,0.4574702923632059
+Destination_CCU,0.18876869846511007
+Days Before Departure,0.07482920911484355
+Season_Regular,0.062430817734618664
+Season_Hajj,0.004619492938762216
+Aircraft Type_Boeing 737,0.003620702755332108
+Season_Winter Holidays,0.0034309350481287818
+Destination_DEL,0.002733824675783776
+Destination_KUL,0.0023542996541241275
+Destination_BKK,0.0023222474950020857
+Arrival Month,0.0020918198774351237
+Source_CXB,0.0012942148714147575
+Departure Day,0.0009754404476643314
+Departure Weekday,0.000892142346111168
+Source_JSR,0.0007669304440090016
+Destination_IST,0.0005880205313755949
+Destination_LHR,0.0005379201190054111
+Booking Source,0.0005044035654903608
+Aircraft Type_Boeing 787,0.00041399770358322693
+Departure Month,0.0004051830381625056
+Arrival Day,0.00029777504825014874
+Source_BZL,0.0002520062055716531
+Airline_Qatar Airways,0.00024630406707018174
+Aircraft Type_Airbus A350,0.00024276404300398516
+Stopovers,0.00019316305599338245
+Airline_Turkish Airlines,0.00018812774100152984
+Aircraft Type_Boeing 777,0.00018649632164259821
+Airline_AirAsia,0.00016897138918516857
+Airline_FlyDubai,0.00011103284348352115
+Destination_DXB,0.0001103608850956363
+Airline_IndiGo,0.00010163491927670877
+Airline_Cathay Pacific,9.837355716334118e-05
+Season_Eid,8.389302312880192e-05
+Airline_Kuwait Airways,7.548820822390728e-05
+Airline_Lufthansa,6.745199454994964e-05
+Airline_British Airways,5.477050092599455e-05
+Airline_Biman Bangladesh Airlines,5.338302601293949e-05
+Airline_Malaysian Airlines,5.319475668565007e-05
+Airline_NovoAir,5.006352826430968e-05
+Destination_YYZ,3.7161602789116865e-05
+Destination_SIN,3.145021921601254e-05
+Airline_Air Arabia,9.110853866262854e-06
+Source_ZYL,1.284170799389447e-06
+Destination Name,0.0
+Source Name,0.0
+Airline_Singapore Airlines,0.0
+Airline_Saudia,0.0
+Airline_Vistara,0.0
+Airline_Air Astra,0.0
+Airline_Emirates,0.0
+Arrival Weekday,0.0
+Airline_Air India,0.0
+Airline_Etihad Airways,0.0
+Airline_Gulf Air,0.0
+Airline_SriLankan Airlines,0.0
+Airline_Thai Airways,0.0
+Source_DAC,0.0
+Source_CGP,0.0
+Airline_US-Bangla Airlines,0.0
+Destination_JFK,0.0
+Destination_JSR,0.0
+Destination_BZL,0.0
+Destination_CGP,0.0
+Destination_CXB,0.0
+Source_SPD,0.0
+Source_RJH,0.0
+Destination_JED,0.0
+Destination_DOH,0.0
+Destination_DAC,0.0
+Destination_ZYL,0.0
+Destination_RJH,0.0
+Destination_SPD,0.0

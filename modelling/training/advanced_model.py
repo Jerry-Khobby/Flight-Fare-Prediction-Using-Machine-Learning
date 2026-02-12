@@ -8,12 +8,13 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 from training.logging_config import get_logger
+import shap 
+
 
 logger = get_logger(log_file="logs/model_training.log")
 
 
 def train_model(X_train, y_train, X_test, y_test):
-
     logger.info("Model training started")
 
     os.makedirs("outputs/plots", exist_ok=True)
@@ -74,17 +75,42 @@ def train_model(X_train, y_train, X_test, y_test):
     logger.info(f"Best CV R²: {gb_grid.best_score_:.4f}")
 
     best_model = gb_grid.best_estimator_
-
     #  Final Evaluation
-
     train_pred = np.expm1(best_model.predict(X_train))
     test_pred = np.expm1(best_model.predict(X_test))
 
     logger.info(f"Train R²: {r2_score(y_train, train_pred):.4f}")
     logger.info(f"Test R²: {r2_score(y_test, test_pred):.4f}")
-
+    logger.info(f"Test MAE: {mean_absolute_error(y_test, test_pred):.2f}")
+    logger.info(f"Test RMSE: {np.sqrt(mean_squared_error(y_test, test_pred)):.2f}")
+    
+    #Shap Feature Importance 
+    logger.info("Computing SHAP values")
+    explainer = shap.TreeExplainer(best_model)
+    shap_values = explainer.shap_values(X_test)
+    shap_importance = np.abs(shap_values).mean(axis=0)
+    
+    shap_df = pd.DataFrame({
+        "Feature": X_test.columns,
+        "SHAP Importance": shap_importance
+    }).sort_values(by="SHAP Importance",ascending=False)
+    shap_df.to_csv("outputs/shap_importance.csv", index=False)
+    logger.info("SHAP importance saved")
+    
+    #Shap Plot
+    plt.figure(figsize=(10, 6))
+    plt.barh(shap_df["Feature"][:15], shap_df["SHAP Importance"][:15])
+    plt.gca().invert_yaxis()
+    plt.title("Top 15 Features by SHAP Importance")
+    plt.xlabel("Mean |SHAP Value|")
+    
+    shap_plot_path = "outputs/plots/shap_feature_importance.png"
+    plt.savefig(shap_plot_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    logger.info(f"SHAP plot saved: {shap_plot_path}")
+    
+    
     # Regularization Plot
-
     alphas = [0.01, 0.1, 1, 10, 100]
     ridge_scores = []
     lasso_scores = []
@@ -118,5 +144,4 @@ def train_model(X_train, y_train, X_test, y_test):
 
     logger.info(f"Regularization plot saved: {plot_path}")
     logger.info("Model training completed successfully")
-
     return best_model
