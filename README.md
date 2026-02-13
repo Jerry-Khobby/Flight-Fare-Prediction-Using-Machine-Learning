@@ -333,11 +333,11 @@ SHAP Computed: Yes
 
 This project demonstrates:
 
-✔ Full ML lifecycle implementation
-✔ Proper validation & feature engineering
-✔ Model comparison and optimization
-✔ Interpretability using SHAP
-✔ Deployment-ready artifacts
+Full ML lifecycle implementation
+Proper validation & feature engineering
+Model comparison and optimization
+Interpretability using SHAP
+Deployment-ready artifacts
 
 It serves as a production-style machine learning system for airline fare prediction.
 
