@@ -231,25 +231,19 @@ Flight duration and route contribute more than timing features.
 # Additional KPI & Analytical Visualizations
 
 ### Outlier Detection
+Outliers was checked for the various numeric columns or features 
 
-(Add outlier plot here)
 
-```
-![Outlier Plot](modelling/outputs/plots/outlier_analysis.png)
+![Tax and Surcharge Outlier](./modelling/data/Tax%20&%20Surcharge%20(BDT)_outliers.png)
+![Total Fare Outlier](./modelling/data/Total%20Fare%20(BDT)_outliers.png)
+![Base Fare Outlier](./modelling/data/Base%20Fare%20(BDT)_outliers.png)
+![Day Before Departure Outlier](./modelling/data/Days%20Before%20Departure_outliers.png)
+![Duration Outlier](./modelling/data/Duration%20(hrs)_outliers.png)
 
-```
 
-###  Model Comparison Plot
-
-```
-![Model Comparison](modelling/outputs/plots/model_comparison.png)
-```
 
 ### Predicted vs Actual
-
-```
-![Predicted vs Actual](modelling/outputs/plots/predicted_vs_actual.png)
-```
+![Predicted vs Actual](./modelling/outputs/plots/actual_vs_predicted.png)
 
 ---
 
