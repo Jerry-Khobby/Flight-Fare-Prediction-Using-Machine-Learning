@@ -74,12 +74,12 @@ This project frames fare prediction as a:
 
 #  Data Cleaning & Validation
 
-✔ All required columns validated
-✔ Date features extracted (Month, Day, Season)
-✔ One-hot encoding applied
-✔ Ordinal encoding applied
-✔ Removed target leakage (Base Fare & Tax removed)
-✔ Feature scaling applied
+* All required columns validated
+* Date features extracted (Month, Day, Season)
+* One-hot encoding applied
+* Ordinal encoding applied
+* Removed target leakage (Base Fare & Tax removed)
+*  Feature scaling applied
 
 ---
 
@@ -191,9 +191,9 @@ CV R² = 0.8937
 | Test MAE  | 28,464 |
 | Test RMSE | 47,880 |
 
-✔ Minimal overfitting
-✔ Strong generalization
-✔ Best bias-variance balance
+ -  Minimal overfitting
+- Strong generalization
+- Best bias-variance balance
 
 ---
 
@@ -333,11 +333,11 @@ SHAP Computed: Yes
 
 This project demonstrates:
 
-Full ML lifecycle implementation
-Proper validation & feature engineering
-Model comparison and optimization
-Interpretability using SHAP
-Deployment-ready artifacts
+* Full ML lifecycle implementation
+* Proper validation & feature engineering
+* Model comparison and optimization
+* Interpretability using SHAP
+* Deployment-ready artifacts
 
 It serves as a production-style machine learning system for airline fare prediction.
 
