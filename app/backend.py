@@ -4,6 +4,8 @@ from pydantic import BaseModel
 import pandas as pd
 import numpy as np
 import joblib
+import json 
+from monitoring.model_monitor import ModelMonitor 
 
 app = FastAPI(title="Flight Fare Prediction API")
 
@@ -14,6 +16,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+monitor = ModelMonitor(monitoring_dir="monitoring/data")
 
 class FlightInput(BaseModel):
     Airline: str
@@ -113,6 +117,18 @@ def predict_fare(flight: FlightInput):
         raise HTTPException(status_code=503, detail="Model not loaded")
     
     try:
+        raw_input  = flight.dict()
+        
+        #drift detection before processing
+        drift_result = monitor.detect_drift(raw_input)
+        
+        #Save drift log 
+        drift_log_file = monitor.monitoring_dir/"drift_log.jsonl"
+        with open(drift_log_file,"a") as f: 
+            f.write(json.dumps(drift_result) +"\n")
+            
+            
+            
         processed = preprocess_input(flight.dict())
         y_pred_log = model.predict(processed)
         y_pred = np.expm1(y_pred_log)
@@ -126,3 +142,48 @@ def predict_fare(flight: FlightInput):
         import traceback
         print(traceback.format_exc())
         raise HTTPException(status_code=500, detail=str(e))
+    
+    
+
+@app.get("/monitoring/metrics")
+def get_metrics(days: int = 7):
+    """Get model performance metrics"""
+    return monitor.get_performance_metrics(days=days)
+
+@app.get("/monitoring/drift")
+def get_drift_summary(days: int = 7):
+    """Get drift detection summary"""
+    return monitor.get_drift_summary(days=days)
+
+
+
+@app.get("/monitoring/health")
+def health_check():
+    metrics = monitor.get_performance_metrics(days=7)
+    drift = monitor.get_drift_summary(days=7)
+
+    mae_threshold = 35000
+    drift_rate_threshold = 0.1
+
+    health_status = "healthy"
+    warnings = []
+
+    mae_value = metrics.get("mae", 0) or 0
+    drift_rate_value = drift.get("drift_rate", 0) or 0
+
+    if mae_value > mae_threshold:
+        health_status = "degraded"
+        warnings.append(f"MAE ({mae_value:.2f}) exceeds threshold ({mae_threshold})")
+
+    if drift_rate_value > drift_rate_threshold:
+        health_status = "degraded"
+        warnings.append(f"Drift rate ({drift_rate_value:.2%}) exceeds threshold ({drift_rate_threshold:.0%})")
+
+    return {
+        "status": health_status,
+        "model_loaded": model_loaded,
+        "recent_mae": mae_value,
+        "drift_rate": drift_rate_value,
+        "warnings": warnings,
+        "timestamp": pd.Timestamp.now().isoformat()
+    }
